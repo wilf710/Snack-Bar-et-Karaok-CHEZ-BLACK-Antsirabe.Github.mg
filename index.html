@@ -6,8 +6,7 @@
   <title>CHEZ BLACK - Snack & Karaoké</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body onload="loadSiteData()">
-
+<body onload="loadSiteData(); loadGalleryImages();">
   <header>
     <h1>CHEZ BLACK</h1>
     <p>Snack & Karaoké - Miarivola Ambohimena</p>
@@ -21,7 +20,6 @@
 
   <section class="hero">
     <h2>Ambiance, Goût et Musique !</h2>
-    <br />
     <a href="#contact" class="cta">Réserver maintenant</a>
   </section>
 
@@ -33,9 +31,7 @@
 
   <section id="menu" class="menu">
     <h2>Menu</h2>
-    <ul id="menu-list">
-      <!-- Menu items injectés ici -->
-    </ul>
+    <ul id="menu-list"></ul>
     <p>*Menu modifiable selon vos envies !*</p>
   </section>
 
@@ -44,6 +40,11 @@
     <p>📞 Téléphone : <span id="phone">038 64 746 16</span></p>
     <p>📧 Email : <span id="email">ismael03419@gmail.com</span></p>
     <a class="edit-btn" href="admin.html">🛠 Modifier mon site</a>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>Galerie</h2>
+    <div id="gallery-images" class="gallery-grid"></div>
   </section>
 
   <footer>

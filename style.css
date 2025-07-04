@@ -4,68 +4,121 @@ body {
   background: #111;
   color: #fff;
 }
-
-header, footer, nav, section {
-  text-align: center;
-  padding: 20px;
-}
-
 header {
   background: #000;
+  padding: 20px;
+  text-align: center;
+}
+header h1 {
+  font-size: 2.5em;
   color: #f5c518;
 }
-
 nav {
-  background: #222;
   display: flex;
   justify-content: center;
   gap: 20px;
+  padding: 10px;
+  background: #222;
 }
-
 nav a {
   color: #f5c518;
   text-decoration: none;
+  font-weight: bold;
 }
-
+section {
+  padding: 40px 20px;
+  text-align: center;
+}
 .hero {
-  background: url('https://images.unsplash.com/photo-1550950941-09b3c5c9b53b?auto=format&fit=crop&w=1600&q=80') center/cover;
+  background: url('https://images.unsplash.com/photo-1550950941-09b3c5c9b53b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: white;
   padding: 100px 20px;
 }
-
 .hero h2 {
-  background: rgba(0,0,0,0.6);
+  font-size: 3em;
+  background: rgba(0, 0, 0, 0.6);
   display: inline-block;
-  padding: 15px 25px;
-  border-radius: 10px;
-  font-size: 2em;
-}
-
-.cta, .edit-btn {
-  display: inline-block;
-  margin-top: 15px;
   padding: 10px 20px;
+  border-radius: 10px;
+}
+.cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
   background: #f5c518;
   color: #000;
   font-weight: bold;
-  border-radius: 6px;
   text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
 }
-
-.edit-btn:hover, .cta:hover {
-  background: #fff100;
+.cta:hover {
+  background: #ffc107;
 }
-
-.menu, .info, .contact {
+.info, .menu, .contact, .admin {
   background: #1e1e1e;
   margin: 20px auto;
+  border-radius: 12px;
   max-width: 800px;
+  padding: 20px;
+}
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+.menu li {
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+}
+.gallery {
+  background: #1e1e1e;
+  margin: 40px auto;
+  max-width: 900px;
   border-radius: 12px;
   padding: 20px;
 }
-
-input, textarea {
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+footer {
+  background: #000;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #aaa;
+}
+input, textarea, button {
+  width: 90%;
   padding: 10px;
+  margin-top: 10px;
   border-radius: 6px;
-  width: 80%;
-  margin-bottom: 10px;
+  border: none;
+}
+button {
+  background-color: #f5c518;
+  font-weight: bold;
+  cursor: pointer;
+}
+.edit-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #f5c518;
+  color: #000;
+  text-decoration: none;
+  border-radius: 6px;
+}
+.edit-btn:hover {
+  background: #ffc107;
 }

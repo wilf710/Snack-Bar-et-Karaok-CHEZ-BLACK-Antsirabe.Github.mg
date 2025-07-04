@@ -1,45 +1,56 @@
 function loadSiteData() {
-  const phone = localStorage.getItem("phone");
-  const email = localStorage.getItem("email");
-  const openTime = localStorage.getItem("openTime");
-  const menu = localStorage.getItem("menu");
-
-  if (phone) document.getElementById("phone").textContent = phone;
-  if (email) document.getElementById("email").textContent = email;
-  if (openTime) document.getElementById("open-time").textContent = openTime;
-  if (menu) {
-    const items = menu.split("\n");
+  if (localStorage.getItem("phone")) {
+    document.getElementById("phone").innerText = localStorage.getItem("phone");
+  }
+  if (localStorage.getItem("email")) {
+    document.getElementById("email").innerText = localStorage.getItem("email");
+  }
+  if (localStorage.getItem("openTime")) {
+    document.getElementById("open-time").innerText = localStorage.getItem("openTime");
+  }
+  if (localStorage.getItem("menu")) {
+    const items = localStorage.getItem("menu").split("\n");
     const menuList = document.getElementById("menu-list");
     menuList.innerHTML = "";
     items.forEach(item => {
-      if (item.trim()) {
-        const li = document.createElement("li");
-        li.textContent = item.trim();
-        menuList.appendChild(li);
-      }
+      const li = document.createElement("li");
+      li.innerText = item;
+      menuList.appendChild(li);
     });
   }
 }
 
-function checkPassword() {
-  const pass = document.getElementById("password").value;
-  if (pass === "blackadmin") {
-    document.getElementById("admin-panel").style.display = "block";
-  } else {
-    alert("Mot de passe incorrect !");
-  }
+function saveSiteData() {
+  localStorage.setItem("phone", document.getElementById("phone-input").value);
+  localStorage.setItem("email", document.getElementById("email-input").value);
+  localStorage.setItem("openTime", document.getElementById("open-time-input").value);
+  localStorage.setItem("menu", document.getElementById("menu-input").value);
+  alert("Données enregistrées !");
 }
 
-function saveChanges() {
-  const phone = document.getElementById("new-phone").value;
-  const email = document.getElementById("new-email").value;
-  const openTime = document.getElementById("new-open-time").value;
-  const menu = document.getElementById("new-menu").value;
+function loadGalleryImages() {
+  const container = document.getElementById("gallery-images");
+  if (!container) return;
 
-  if (phone) localStorage.setItem("phone", phone);
-  if (email) localStorage.setItem("email", email);
-  if (openTime) localStorage.setItem("openTime", openTime);
-  if (menu) localStorage.setItem("menu", menu);
+  const images = JSON.parse(localStorage.getItem("gallery") || "[]");
+  container.innerHTML = "";
+  images.forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    container.appendChild(img);
+  });
+}
 
-  alert("Données enregistrées ! Reviens sur le site pour voir les changements.");
+function uploadImage(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const images = JSON.parse(localStorage.getItem("gallery") || "[]");
+    images.push(e.target.result);
+    localStorage.setItem("gallery", JSON.stringify(images));
+    alert("Image ajoutée à la galerie !");
+  };
+  reader.readAsDataURL(file);
 }

@@ -2,36 +2,39 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Admin - Modifier CHEZ BLACK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - CHEZ BLACK</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="admin">
+<body>
+  <header>
+    <h1>Admin - CHEZ BLACK</h1>
+  </header>
 
-  <section class="contact">
-    <h2>Panneau d’administration</h2>
+  <section class="admin" id="admin-panel">
+    <h2>Modifier le site</h2>
 
-    <label>Mot de passe :</label>
-    <input type="password" id="password" placeholder="Mot de passe" />
-    <button onclick="checkPassword()">Valider</button>
+    <label>📞 Numéro de téléphone :</label><br>
+    <input type="text" id="phone-input" placeholder="038 64 746 16"><br><br>
 
-    <div id="admin-panel" style="display:none; margin-top: 20px;">
-      <h3>Modifier les infos</h3>
+    <label>📧 Email :</label><br>
+    <input type="email" id="email-input" placeholder="ismael03419@gmail.com"><br><br>
 
-      <label>Téléphone :</label>
-      <input type="text" id="new-phone"><br><br>
+    <label>🕒 Heures d'ouverture :</label><br>
+    <input type="text" id="open-time-input" placeholder="Tous les jours à partir de 11h du matin"><br><br>
 
-      <label>Email :</label>
-      <input type="text" id="new-email"><br><br>
+    <label>🍔 Menu (une ligne par élément) :</label><br>
+    <textarea id="menu-input" rows="6"></textarea><br><br>
 
-      <label>Heures d’ouverture :</label>
-      <input type="text" id="new-open-time"><br><br>
+    <h3>🖼 Ajouter une image à la galerie</h3>
+    <input type="file" accept="image/*" onchange="uploadImage(event)"><br><br>
 
-      <label>Menu (une ligne par item) :</label><br>
-      <textarea id="new-menu" rows="6" style="width:100%"></textarea><br><br>
-
-      <button onclick="saveChanges()">💾 Enregistrer</button>
-    </div>
+    <button onclick="saveSiteData()">Enregistrer</button>
   </section>
+
+  <footer>
+    &copy; 2025 CHEZ BLACK
+  </footer>
 
   <script src="script.js"></script>
 </body>
