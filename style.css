@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+header, footer, nav, section {
+  text-align: center;
+  padding: 20px;
+}
+
+header {
+  background: #000;
+  color: #f5c518;
+}
+
+nav {
+  background: #222;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: #f5c518;
+  text-decoration: none;
+}
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1550950941-09b3c5c9b53b?auto=format&fit=crop&w=1600&q=80') center/cover;
+  padding: 100px 20px;
+}
+
+.hero h2 {
+  background: rgba(0,0,0,0.6);
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 2em;
+}
+
+.cta, .edit-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #f5c518;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.edit-btn:hover, .cta:hover {
+  background: #fff100;
+}
+
+.menu, .info, .contact {
+  background: #1e1e1e;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 6px;
+  width: 80%;
+  margin-bottom: 10px;
+}

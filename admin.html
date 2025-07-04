@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Modifier CHEZ BLACK</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin">
+
+  <section class="contact">
+    <h2>Panneau d’administration</h2>
+
+    <label>Mot de passe :</label>
+    <input type="password" id="password" placeholder="Mot de passe" />
+    <button onclick="checkPassword()">Valider</button>
+
+    <div id="admin-panel" style="display:none; margin-top: 20px;">
+      <h3>Modifier les infos</h3>
+
+      <label>Téléphone :</label>
+      <input type="text" id="new-phone"><br><br>
+
+      <label>Email :</label>
+      <input type="text" id="new-email"><br><br>
+
+      <label>Heures d’ouverture :</label>
+      <input type="text" id="new-open-time"><br><br>
+
+      <label>Menu (une ligne par item) :</label><br>
+      <textarea id="new-menu" rows="6" style="width:100%"></textarea><br><br>
+
+      <button onclick="saveChanges()">💾 Enregistrer</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

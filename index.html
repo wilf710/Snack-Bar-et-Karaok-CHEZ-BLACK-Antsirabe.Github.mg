@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHEZ BLACK - Snack & Karaoké</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadSiteData()">
+
+  <header>
+    <h1>CHEZ BLACK</h1>
+    <p>Snack & Karaoké - Miarivola Ambohimena</p>
+  </header>
+
+  <nav>
+    <a href="#info">Infos</a>
+    <a href="#menu">Menu</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Ambiance, Goût et Musique !</h2>
+    <br />
+    <a href="#contact" class="cta">Réserver maintenant</a>
+  </section>
+
+  <section id="info" class="info">
+    <h2>Infos pratiques</h2>
+    <p><strong>Adresse :</strong> Miarivola Ambohimena</p>
+    <p><strong>Heures d'ouverture :</strong> <span id="open-time">Tous les jours à partir de 11h du matin</span></p>
+  </section>
+
+  <section id="menu" class="menu">
+    <h2>Menu</h2>
+    <ul id="menu-list">
+      <!-- Menu items injectés ici -->
+    </ul>
+    <p>*Menu modifiable selon vos envies !*</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>📞 Téléphone : <span id="phone">038 64 746 16</span></p>
+    <p>📧 Email : <span id="email">ismael03419@gmail.com</span></p>
+    <a class="edit-btn" href="admin.html">🛠 Modifier mon site</a>
+  </section>
+
+  <footer>
+    &copy; 2025 CHEZ BLACK - Tous droits réservés
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
